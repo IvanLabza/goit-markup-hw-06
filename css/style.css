@@ -544,6 +544,17 @@ body {
   background-color: var(--navi-blue);
 }
 
+.ftr-svg{
+  padding: 0;
+  padding-top: 8px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 24px;
+
+}
+
 .ftr-text {
   font-size: 16px;
   line-height: 1.5;
@@ -602,7 +613,7 @@ body {
 
 .ftr-form{
   margin-left: 80px;
-  width: 453px;
+  
 }
 
 .ftr-form-title{
@@ -615,11 +626,13 @@ body {
 }
 
 .ftr-input{
+  display: block;
   background-color: transparent;
   border: 1px solid var(--write-title);
   border-radius: 4px;
   padding: 8px 0px 8px 16px;
-  width: 100%;
+  min-width: 264px;
+  min-height: 40px;
 }
 
 .ftr-form-svg{
@@ -838,13 +851,16 @@ body {
   border: 1px solid #2E2F42;
   padding-left: 38px;
   transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.form-input:is(:hover, :focus) + .form-svg{
-  fill: var(--iris);
+  padding-top: 11px;
+  padding-bottom: 11px;
 }
 
 .form-input:is(:hover, :focus){
   border-color: var(--iris);
+}
+
+.form-imput:focus+.form-svg {
+  fill: #4D5AE5;
 }
 
 .form{
@@ -856,6 +872,26 @@ body {
   margin-bottom: 8px;
 }
 
+.form-check:checked~.icon{
+background-color: var(--ocean);
+background-image: url(../images/check.svg);
+background-origin: border-box;
+background-position: center;
+background-repeat: no-repeat;
+border: 1px solid var(--ocean)
+
+}
+
+.icon{
+display: inline-block;
+width: 16px;
+height: 16px;
+border: 1px solid var(--navi-blue);
+border-radius: 2px;
+position: absolute;
+transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),background-image 0.25s cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
 .form-feed{
   resize: none;
   display: block;
@@ -865,14 +901,18 @@ body {
   border-radius: 4px;
   transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 8px 16px;
+ 
 
 }
+
 
 .form-active{
 transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-active:is(:hover,:focus){
+
+
+.form-active:is(:hover,:focus,:active) {
   fill: var(--iris);
 }
 
@@ -902,17 +942,30 @@ transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-check-text{
-  margin-left: 8px;
+  margin-left: 24px;
+  
 }
 
 
 .form-check{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1px solid var(--navi-blue);
-  border-radius: 2px;
+  position: absolute;
+    top: -150%;
+    z-index: -100;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+    cursor: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    white-space: nowrap;
 }
+
 
 .of-out{
   outline: transparent;
