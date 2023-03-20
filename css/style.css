@@ -633,6 +633,11 @@ body {
   padding: 8px 0px 8px 16px;
   min-width: 264px;
   min-height: 40px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  color: #FFFFFF;
 }
 
 .ftr-form-svg{
@@ -643,7 +648,6 @@ body {
 
 .ftr-input::placeholder{
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 2;
@@ -660,9 +664,15 @@ body {
   border: 1px;
   border-color: var(--iris);
   color: var(--write-title);
-  
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   
 }
+
+.ftr-form-btn:is(:hover, :focus) {
+  background: var(--ocean);
+  border-color: var(--ocean);
+}
+
 .ftr-form-btn-conteiner{
   position: relative;
 }
@@ -848,7 +858,7 @@ body {
   height: 40px;
   border-radius: 4px;
   background-color: #FCFCFC;
-  border: 1px solid #2E2F42;
+  border: 1px solid rgba(33, 33, 33, 0.2);;
   padding-left: 38px;
   transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   padding-top: 11px;
@@ -897,7 +907,7 @@ transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),background-color 0.2
   display: block;
   width: 100%;
   min-height: 120px;
-  border: 1px solid #2E2F42;
+  border: 1px solid rgba(33, 33, 33, 0.2);;
   border-radius: 4px;
   transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 8px 16px;
@@ -984,6 +994,7 @@ transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-check-link{
   text-decoration:underline;
+  color: #4D5AE5;
 }
 
 .form-svg{
